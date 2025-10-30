@@ -22,19 +22,19 @@
   export let stars: Record<string, number> | null = null;
 </script>
 
-<!-- Title -->
 <h3 class="text-black text-xl font-semibold mb-2">
   <span class="mr-1">{data.title}</span>
   <small class="whitespace-nowrap text-neutral-500 text-base font-normal">
-    {formatTime("%B %Y", data.date)}
+    {formatTime("%Y", data.date)}
   </small>
 </h3>
 
-<!-- Stars and tags (pill bar) -->
+
 <div class="flex flex-wrap mb-1">
   <a
     class="pill hover:!bg-neutral-200 transition-colors"
     href="https://github.com/{data.repo}/stargazers"
+    target="_blank"
   >
     <Star size={14} class="fill-current" />
     {#if stars?.[data.repo] !== undefined}
@@ -48,15 +48,17 @@
   {/each}
 </div>
 
-<!-- Description and image -->
+
 <div class="space-y-4">
-  <div class="grid grid-cols-3 gap-4 md:gap-8 lg:gap-12">
-    <div class="col-span-3 md:col-span-2">
+  <div>
+    <div>
       <p class="text-lg font-light mb-3">{data.lead}</p>
       <Markdown source={data.content} />
     </div>
-    <div class="col-span-3 md:col-span-1">
-      <a rel="external" href={images[`../../projects/${data.image}`]?.default}>
+    
+    <!--
+    <div>
+      <a target="_blank" rel="external" href={images[`../../projects/${data.image}`]?.default}>
         <img
           src={images[`../../projects/${data.image}`]?.default}
           alt="{data.title} preview image"
@@ -65,13 +67,15 @@
         />
       </a>
     </div>
+    -->
   </div>
 
+  <!--
   {#if data.subimages}
     <div class="grid grid-cols-3 gap-4 md:gap-8 lg:gap-12">
       {#each data.subimages as image}
         <div class="col-span-full md:col-span-1">
-          <a rel="external" href={images[`../../projects/${image}`]?.default}>
+          <a target="_blank" rel="external" href={images[`../../projects/${image}`]?.default}>
             <img
               src={images[`../../projects/${image}`]?.default}
               alt="{data.title} subimage"
@@ -81,6 +85,7 @@
       {/each}
     </div>
   {/if}
+  -->
 </div>
 
 <style lang="postcss">

@@ -16,11 +16,40 @@
 	}
 
 	.layout-md {
-		@apply mx-auto max-w-screen-md px-4 sm:px-6;
+		@apply mx-auto max-w-screen-md px-2 sm:px-2;
 	}
 
 	.heading2 {
 		@apply mb-6 text-xl font-semibold text-black;
+	}
+
+	.heading3 {
+		@apply mb-6 text-lg text-black;
+	}
+
+	.timeline-container {
+		@apply relative pl-8;
+	}
+
+	.timeline-line {
+		@apply absolute bottom-0 left-2 top-0 w-0.5 bg-neutral-300;
+	}
+
+	.timeline-item {
+		@apply relative mb-8;
+	}
+
+	.timeline-dot {
+		@apply absolute left-[-23px] top-4 h-3 w-3 rounded-full border-2 border-white bg-neutral-300;
+		@apply -translate-x-1/2 transform;
+	}
+
+	.timeline-dot.current {
+		@apply border-neutral-800 bg-neutral-800;
+	}
+
+	.timeline-content {
+		@apply ml-4;
 	}
 }
 
@@ -29,7 +58,7 @@ html {
 }
 
 body {
-	@apply py-12 text-neutral-700 sm:py-24 md:py-32;
+	@apply py-12 text-neutral-700 sm:py-20 md:py-24;
 }
 
 ::selection {

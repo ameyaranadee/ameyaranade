@@ -51,31 +51,27 @@
 />
 
 <section class="layout-md py-12">
-  <h2 class="heading2">Open Source</h2>
 
   <p class="text-lg mb-4">
-    I view building software in the open as a mode of <em
-      class="font-serif text-[110%] leading-[100%]">creative exploration</em
-    >. It lets me quickly act on inspiration, delve into new topics, and make
-    tools that improve people's lives.
+    I love solving problems I find intereting and I do it through <em
+      class="link font-serif text-[110%] leading-[100%]"> code and words </em
+    >. It lets me explore, "tinker", dive into new topics, and understand the world a bit better while showing the world my view. 
   </p>
 
   <p class="text-lg mb-4">
-    You'll see that I particularly like programming languages, distributed
-    systems, machine learning, computer graphics, music, and art.
-  </p>
-
-  <p class="text-lg">
+    You'll see that I particularly like words, distributed
+    systems, machine learning, football, and art.
+    
     If you find something interesting,
-    <a class="link" href="mailto:your-email@example.com?subject=Software%20Projects"
+    <a class="link" href="mailto:ranadeamr@gmail.com?subject=Hi!%20Reaching%20out!"
       >let me know</a
     >!
   </p>
 </section>
 
 {#each projectsByDate as id (id)}
-  <section class="py-10" id={trimName(id)}>
-    <div class="mx-auto max-w-[1152px] px-4 sm:px-6">
+  <section class="py-6" id={trimName(id)}>
+    <div class="layout-md">
       <Project data={projects[id]} {images} {stars} />
     </div>
   </section>

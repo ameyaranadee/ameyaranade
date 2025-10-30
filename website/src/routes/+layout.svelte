@@ -54,5 +54,3 @@
     </main>
   {/key}
 {/if}
-
-<Footer />

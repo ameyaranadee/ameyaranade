@@ -47,6 +47,7 @@
 	"dependencies": {
 		"@fontsource/newsreader": "^4.5.10",
 		"@lucide/svelte": "^0.548.0",
+		"html-to-image": "^1.11.13",
 		"marked": "^4.3.0",
 		"strftime": "^0.10.1"
 	}

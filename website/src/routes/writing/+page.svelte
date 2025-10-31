@@ -22,7 +22,7 @@
   title="Ameya Ranade – Writing"
   description="Past writing: musings, essays, notes, and technical blog posts."
 />
-<section class="layout-md py-1">
+<section class="layout-md py-4">
   <h3 class="heading3"> You can also read my essays on my Instagram <a class="link" href="https://www.instagram.com/ameyaranadee/"> here! </a> </h3>
 </section>
 

@@ -172,6 +172,13 @@
   function repaginate() {
     if (writing?.content) {
       pages = splitContentIntoPages(writing.content, computeWordsPerPage());
+      // Prepend title and date to first page
+      if (pages.length > 0) {
+        const titleHeader = `${writing.title}\n\n${formatTime("%B %-d, %Y", writing.date)}\n\n`;
+        pages[0] = titleHeader + pages[0];
+      } else {
+        pages = [`${writing.title}\n\n${formatTime("%B %-d, %Y", writing.date)}\n\n${writing.content}`];
+      }
       currentPage = Math.min(currentPage, Math.max(0, pages.length - 1));
     }
   }
@@ -182,8 +189,7 @@
     } else {
        // Fallback: create pages from summary and title
        pages = [
-         `# ${writing.title}\n\n${formatTime("%B %-d, %Y", writing.date)}`,
-         writing.summary,
+         `${writing.title}\n\n${formatTime("%B %-d, %Y", writing.date)}\n\n${writing.summary}`,
          "This is a placeholder for the full content. In a real implementation, you would load the actual content here."
        ];
      }
@@ -322,16 +328,14 @@
   >
     
     <div class="relative z-10 h-full flex flex-col bg-white rounded-lg shadow-xl overflow-hidden">
-      <div class="flex items-center justify-between p-4 border-b bg-gray-50">
-        <h2 class="text-xl font-semibold text-gray-800">{writing.title}</h2>
-        <button 
-          on:click={closeModal}
-          class="p-2 hover:bg-gray-200 rounded-full transition-colors"
-          aria-label="Close modal"
-        >
-          <X size={20} />
-        </button>
-      </div>
+      <!-- Close button positioned absolutely in top right -->
+      <button 
+        on:click={closeModal}
+        class="absolute top-4 right-4 z-50 p-2 hover:bg-gray-200 rounded-full transition-colors bg-white bg-opacity-90 shadow-lg"
+        aria-label="Close modal"
+      >
+        <X size={20} />
+      </button>
 
       <div class="flex-1 relative overflow-hidden">
         <div 
@@ -407,13 +411,19 @@
     font-family: 'Cardo', 'Times New Roman', serif;
   }
   
+  .prose :global(strong:first-child) {
+    font-size: 2.5rem;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #1f2937;
+  }
+  
   .prose h1 {
     font-size: 2rem;
     font-weight: bold;
     margin-bottom: 1.5rem;
     color: #1f2937;
-    border-bottom: 2px solid #e5e7eb;
-    padding-bottom: 0.5rem;
   }
   
   .prose h2 {

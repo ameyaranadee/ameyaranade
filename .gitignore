@@ -36,5 +36,4 @@ coverage/
 .vscode/
 .idea/
 
-website/src/lib/assets/
 website/static/

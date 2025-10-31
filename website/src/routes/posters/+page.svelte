@@ -6,11 +6,7 @@
     eager: true,
     as: "url"
   }) as Record<string, string>;
-  const fallbackModules = import.meta.glob("/src/projects/*.{png,jpg,jpeg,webp}", {
-    eager: true,
-    as: "url"
-  }) as Record<string, string>;
-  const selected = Object.keys(posterModules).length ? posterModules : fallbackModules;
+  const selected = posterModules;
 
   const items = Object.entries(selected).map(([k, url]) => ({ id: k, src: url }));
 </script>

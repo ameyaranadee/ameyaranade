@@ -2,20 +2,6 @@
   import { ArrowUpRight } from "@lucide/svelte";
   import Seo from "$lib/components/Seo.svelte";
 
-  const featuredProjects = [
-    {
-      name: "Salient Entity Linking for the Web",
-      href: "/projects#project1",
-      desc: "Description of your first project",
-    },
-    {
-      name: "Project 2", 
-      href: "/projects#project2",
-      desc: "Description of your second project",
-      aside: "Some notable achievement",
-    },
-    // Add more projects as needed
-  ];
 </script>
 
 <Seo
@@ -34,50 +20,45 @@
 <div class="layout-md text-lg space-y-14">
   <div class="space-y-5">
     <p>
-      I work in the <a class="link" href="https://www.intellectai.com"> IntellectAI org at Intellect Design Arena</a>
-      and recently graduated from the
-      <a class="link" href="https://www.umass.edu">University of Massachusetts Amherst</a>.
+      Hi, I’m Ameya <em>(uh-may-ya)</em>. I’m 24, born and raised in Mumbai. A little over two years ago, I moved to the States to pursue a master’s in computer science - and I did it!  graduated from the University of Massachusetts Amherst earlier this year. Go Minutemen!
     </p>
-
     <p>
-      I hope to develop a better <em>mental model</em> of the world by exploring how technology, reasoning, and creativity come together to make sense of the world and our place in it.
+      I now live in New Jersey and work at <a class="link" href="https://www.intellectai.com"> IntellectAI </a>  where I build applied AI and full-stack solutions for insurance workflows. These days, I’m mainly interested in applied AI, systems and backend engineering space.
     </p>
+    <p>  Last summer, I worked at a stealth startup, where I helped build an automation platform for workflows in the piping industry. It was an incredible experience that brought together two things I love most</p> <ul> <li> research, prototype and building ideas from scratch </li><li> collaborating in a lean team </li></ul> <p> I was one of the early members of the team when it was just 4 engineers trying to make sense of the EPC industry. It was chaotic, fun, and deeply rewarding. What I learned from that time was simple: access to niche data + AI = immense value. Since then, I’ve been eager to contribute to products and projects where AI genuinely makes a difference. You can explore more of my work <a class="link" href="/resume">here</a>. And if you’re building something similar, I’d love to hear about it (maybe there’s a way I can help)! </p>
 
+    <p>My long-term dream is to one day work in football (or soccer, if you prefer). I’ve always been fascinated by how data and AI are transforming the sport. Every now and then, I tinker with football analytics just for fun. Eventually, I hope to work at the intersection of my two biggest passions - football and technology. As they say, math is everywhere. Check out my <a class="link" href="/projects">projects</a> to find out more!</p>
     <p>
-      Last summer, I worked at a stealth startup, building automation tools powered by LLMs. It was a deep dive into <em> systems </em> thinking and how language models can be shaped into practical, reliable products.
+      PS: This site is my little playground. Welcome to my corner of the internet :) The idea is to give you a sense of how I see the world. I also write sometimes. mostly reflections and short stories which I share on <a href="https://www.instagram.com/ameyaranadee/">Instagram</a>. If you’d like to read them in sequence, you can find them in the writing section. I also enjoy making playlists <a href="https://open.spotify.com/user/4j9js6iek1qu53ypbhf1ddbvm/playlists">here</a>, and I have a thing for posters; you can explore my poster wall here <a class="link" href="/posters">here</a>. Feel free to play around, add your own posters, and even download it as an image!
     </p>
   </div>
-
-  <!--
-  <div class="leading-snug space-y-4">
-    <p class="pb-2">Notable work:</p>
-
-    {#each featuredProjects as project}
-      <a class="project-pair" href={project.href}>
-        <div class="text-black font-medium">
-          {project.name}
-          <ArrowUpRight size={18} class="inline text-neutral-400" />
-        </div>
-        <div>
-          <p>{project.desc}</p>
-          {#if project.aside}
-            <aside>{project.aside}</aside>
-          {/if}
-        </div>
-      </a>
-    {/each}
-  </div>
-  -->
-
-  <div class="space-y-5">
-    <p>
-      I had a lot of fun studying at a university in Amherst, where I first experienced living on campus, got deeper into ML, was a course grader for graduate-level CS classes, worked multiple part time jobs and now I'm on the way to publishing research with Apple!
-    </p>
-    <p>  
-       I emjoy making playlists and you can find them <a class="link" target="_blank" href="https://open.spotify.com/user/4j9js6iek1qu53ypbhf1ddbvm?si=a4356fa730694cfe">here</a>. I also write sometimes. Mostly reflections and stories, and post them <a class="link" target="_blank" href="https://www.instagram.com/ameyaranadee/">here</a>. 
-    </p>
-
-    <p>Other interests: [football, reading, running, writing, math, physics, universe].</p>
-  </div>
-
 </div>
+
+<style lang="postcss">
+  .g {
+    @apply text-neutral-400;
+  }
+
+  ul li::before {
+    content: "— ";
+  }
+
+  em {
+    @apply font-serif text-[110%] leading-[100%];
+  }
+
+  .project-pair {
+    @apply grid sm:grid-cols-[1fr,2fr] gap-y-1 -mx-3 px-3 py-2 hover:bg-neutral-100 transition-colors;
+  }
+
+  aside {
+    @apply mt-0.5 text-base text-neutral-500;
+  }
+
+  /* Correction for vertical navigation links on mobile. */
+  @media (max-width: 420px) {
+    #eric-is {
+      @apply -mt-10;
+    }
+  }
+</style>

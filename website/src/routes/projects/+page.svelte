@@ -47,18 +47,15 @@
 
 <Seo
   title="Ameya Ranade – Projects"
-  description="Open-source software projects in systems, web development, computer graphics, music, programming languages, machine learning, and more."
+  description="Open-source software projects in systems, development, football, machine learning, and more."
 />
 
-<section class="layout-md py-12">
+<section class="layout-md py-8">
 
   <p class="text-lg mb-4">
     I love solving problems I find intereting and I do it through <em
       class="link font-serif text-[110%] leading-[100%]"> code and words </em
     >. It lets me explore, "tinker", dive into new topics, and understand the world a bit better while showing the world my view. 
-  </p>
-
-  <p class="text-lg mb-4">
     You'll see that I particularly like words, distributed
     systems, machine learning, football, and art.
     

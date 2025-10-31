@@ -20,11 +20,11 @@
 	}
 
 	.heading2 {
-		@apply mb-6 text-xl font-semibold text-black;
+		@apply mb-6 text-xl font-semibold text-black dark:text-white;
 	}
 
 	.heading3 {
-		@apply mb-6 text-lg text-black;
+		@apply mb-6 text-lg text-black dark:text-white;
 	}
 
 	.timeline-container {
@@ -59,6 +59,7 @@ html {
 
 body {
 	@apply py-12 text-neutral-700 sm:py-20 md:py-24;
+	@apply dark:text-neutral-300;
 	background: radial-gradient(circle at 1px 1px, rgba(0, 0, 0, 0.08) 1px, transparent 1px) 0 0/16px
 		16px;
 }

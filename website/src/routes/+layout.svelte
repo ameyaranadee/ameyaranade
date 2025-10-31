@@ -6,7 +6,7 @@
   import { fly } from "svelte/transition";
 
   import Header from "$lib/components/Header.svelte";
-  import Footer from "$lib/components/Footer.svelte";
+  import SocialBar from "$lib/components/SocialBar.svelte";
   import type { LayoutData } from "./$types";
 
   export let data: LayoutData;
@@ -54,3 +54,5 @@
     </main>
   {/key}
 {/if}
+
+<SocialBar />
